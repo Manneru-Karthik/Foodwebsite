@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="tastebudsApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Your Taste Buds</title>
+    <style>
+         *{
+            background-color: #f8bf9d;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        .heading{
+            color: #333;
+            font-family: "Brush Script MT",cursive;
+            font-size: 60px;
+        }
+        .images {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+        }
+        #head2, #head3{
+            font-family: "Brush Script MT",cursive;
+            font-size: 30px;
+        }
+        .image {
+            margin: 0 20px;
+            width: 300px;
+            height: 300px;
+        }
+        .details {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body ng-controller="tastebudsController">
+    <div class="container">
+        <div class="heading">Test Your Taste Buds</div>
+        <div class="images">
+          <table>
+            <tr>
+              <td>
+            <a href="spicy1.html"><img class="image" src="6599848.png" alt="Spicy Food"></a></td>
+            <td>
+            <a href="sweet food.html"><img class="image" src="4658792.png" alt="Sweet Food"></a></td>
+            <tr class="details">
+              <td>
+              <div id="head2">Spicy Food</div>
+            <p>{{ spicyPhrases }}</p>
+            </td>
+            <td>
+              <div id="head3">Sweet Food</div>
+              <p>{{ sweetPhrases }}</p>
+            </td>
+            </tr>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        angular.module('tastebudsApp', [])
+            .controller('tastebudsController', function($scope) {
+                $scope.spicyPhrases = "The spicier, the better!";
+                $scope.sweetPhrases = "Indulge in the sweetness of life!";
+            });
+    </script>
+</body>
+</html>
